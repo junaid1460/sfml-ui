@@ -1,0 +1,18 @@
+md-toolbar(style="background:#3F51B5")
+    button(md-icon-button,(click)="goback()")
+        md-icon arrow_back
+    span Display Picture
+div(class="flex",style="align-items:center;flex-direction:column;margin:40px;")
+    div([class.dp]="true",[style.backgroundImage]="'url('+this.dplink+')'")
+    br
+        br   
+    label(md-raised-button=,class="fileContainer")
+        span select an image file
+        input(#file,type="file",name="dp",(change)="setImage()")
+   
+    
+    button(*ngIf="newFileSelected, md-raised-button",[click]="upload(form)") upload
+    md-progress-bar(*ngIf="uploading",mode="indeterminate")
+
+
+

@@ -1,0 +1,22 @@
+def window(){
+	return  createWindow("junaid",800,600);
+}
+
+
+var mywindow = window();
+var mywisdsndow = window();
+mywindow.mouseEvents(fun(){
+	var event = MouseEvents()
+  	event.onMouseMove = fun(e){
+  		print("x : "+ to_string(e.x));
+	}
+	return event;
+}());
+
+mywindow.windowEvents(fun(){
+	var event = WindowEvents()
+  	event.onFocus = fun(e){
+  		print("focus : "+ to_string(e.windowX));
+	}
+	return event;
+}());
