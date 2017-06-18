@@ -62,7 +62,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "src/parser.y" /* yacc.c:339  */
+#line 1 "src/template_parser/src/parser.y" /* yacc.c:339  */
 
     #include<iostream>
     #include "lexer.cpp"
@@ -72,7 +72,7 @@
     void yyerror(const char *);
 
 
-#line 76 "src/parser.cpp" /* yacc.c:339  */
+#line 76 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -92,8 +92,8 @@
 
 /* In a future release of Bison, this section will be replaced
    by #include "parser.hpp".  */
-#ifndef YY_YY_SRC_PARSER_HPP_INCLUDED
-# define YY_YY_SRC_PARSER_HPP_INCLUDED
+#ifndef YY_YY_HOME_JUNAID_CODE_SFUI_SRC_TEMPLATE_PARSER_SRC_PARSER_HPP_INCLUDED
+# define YY_YY_HOME_JUNAID_CODE_SFUI_SRC_TEMPLATE_PARSER_SRC_PARSER_HPP_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -143,11 +143,11 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_SRC_PARSER_HPP_INCLUDED  */
+#endif /* !YY_YY_HOME_JUNAID_CODE_SFUI_SRC_TEMPLATE_PARSER_SRC_PARSER_HPP_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 
-#line 151 "src/parser.cpp" /* yacc.c:358  */
+#line 151 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1236,91 +1236,91 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 17 "src/parser.y" /* yacc.c:1646  */
+#line 17 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     {}
-#line 1242 "src/parser.cpp" /* yacc.c:1646  */
+#line 1242 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 20 "src/parser.y" /* yacc.c:1646  */
+#line 20 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     {   current->text = (yyvsp[0]); current--;}
-#line 1248 "src/parser.cpp" /* yacc.c:1646  */
+#line 1248 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 23 "src/parser.y" /* yacc.c:1646  */
+#line 23 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     {}
-#line 1254 "src/parser.cpp" /* yacc.c:1646  */
+#line 1254 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 26 "src/parser.y" /* yacc.c:1646  */
+#line 26 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     {current->attributes.push_back(std::make_pair((yyvsp[-1]),(yyvsp[0])));}
-#line 1260 "src/parser.cpp" /* yacc.c:1646  */
+#line 1260 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 30 "src/parser.y" /* yacc.c:1646  */
+#line 30 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     {(yyval) = (yyvsp[-2]) + (yyvsp[-1]) + (yyvsp[0]); }
-#line 1266 "src/parser.cpp" /* yacc.c:1646  */
+#line 1266 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 31 "src/parser.y" /* yacc.c:1646  */
+#line 31 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     {(yyval) = (yyvsp[-2]) + (yyvsp[-1]) + (yyvsp[0]); }
-#line 1272 "src/parser.cpp" /* yacc.c:1646  */
+#line 1272 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 32 "src/parser.y" /* yacc.c:1646  */
+#line 32 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     {(yyval) = (yyvsp[0]); std::cout<<"\n\nThis is it: "<<(yyvsp[0])<<"\n";}
-#line 1278 "src/parser.cpp" /* yacc.c:1646  */
+#line 1278 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 34 "src/parser.y" /* yacc.c:1646  */
+#line 34 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     {(yyval) = tmps;tmps ="";}
-#line 1284 "src/parser.cpp" /* yacc.c:1646  */
+#line 1284 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 35 "src/parser.y" /* yacc.c:1646  */
+#line 35 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     {(yyval) = tmps;tmps ="";}
-#line 1290 "src/parser.cpp" /* yacc.c:1646  */
+#line 1290 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 36 "src/parser.y" /* yacc.c:1646  */
+#line 36 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     {(yyval)="";}
-#line 1296 "src/parser.cpp" /* yacc.c:1646  */
+#line 1296 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 38 "src/parser.y" /* yacc.c:1646  */
+#line 38 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     {tmps = (yyvsp[-1]) + tmps;}
-#line 1302 "src/parser.cpp" /* yacc.c:1646  */
+#line 1302 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 43 "src/parser.y" /* yacc.c:1646  */
+#line 43 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     {(yyval) = tmps;tmps = "";}
-#line 1308 "src/parser.cpp" /* yacc.c:1646  */
+#line 1308 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 44 "src/parser.y" /* yacc.c:1646  */
+#line 44 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     {(yyval)="";}
-#line 1314 "src/parser.cpp" /* yacc.c:1646  */
+#line 1314 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 47 "src/parser.y" /* yacc.c:1646  */
+#line 47 "src/template_parser/src/parser.y" /* yacc.c:1646  */
     { tmps = (yyvsp[-1]) + tmps;}
-#line 1320 "src/parser.cpp" /* yacc.c:1646  */
+#line 1320 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
     break;
 
 
-#line 1324 "src/parser.cpp" /* yacc.c:1646  */
+#line 1324 "/home/junaid/code/sfui/src/template_parser/src/parser.cpp" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1548,7 +1548,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 52 "src/parser.y" /* yacc.c:1906  */
+#line 52 "src/template_parser/src/parser.y" /* yacc.c:1906  */
 
 
 void yyerror(const char * t){

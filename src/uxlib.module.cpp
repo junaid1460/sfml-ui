@@ -1,5 +1,7 @@
 #include "./uxlib.cpp"
 #include "./chai.hpp"
+#include "Events.hpp"
+#include "EventObjects.hpp"
 
 #ifdef __UNIX__
 CHAISCRIPT_MODULE_EXPORT 
@@ -12,27 +14,27 @@ chaiscript::ModulePtr uxLibrary(){
 
 
     //MouseEvent registration
-    chaiscript::utility::add_class<crook::MouseEventObject>(*m,
+    chaiscript::utility::add_class<crook::events::objects::MouseEventObject>(*m,
         "MouseEventObject",
         {},
         {
-        {chaiscript::fun(&crook::MouseEventObject::x), "x"},
-       {chaiscript::fun(&crook::MouseEventObject::y), "y"}
+        {chaiscript::fun(&crook::events::objects::MouseEventObject::x), "x"},
+       {chaiscript::fun(&crook::events::objects::MouseEventObject::y), "y"}
         });
 
 
-    chaiscript::utility::add_class<crook::MouseEvents>(*m,
+    chaiscript::utility::add_class<crook::events::MouseEvents>(*m,
         "MouseEvents",
-        {chaiscript::constructor<crook::MouseEvents()>()},
+        {chaiscript::constructor<crook::events::MouseEvents()>()},
         {
-        {chaiscript::fun(&crook::MouseEvents::onClick), "onClick"},
-        {chaiscript::fun(&crook::MouseEvents::onMouseDown), "onMouseDown"},
-        {chaiscript::fun(&crook::MouseEvents::onMouseUp), "onMouseUp"},
-        {chaiscript::fun(&crook::MouseEvents::onMouseMove), "onMouseMove"}
+        {chaiscript::fun(&crook::events::MouseEvents::onClick), "onClick"},
+        {chaiscript::fun(&crook::events::MouseEvents::onMouseDown), "onMouseDown"},
+        {chaiscript::fun(&crook::events::MouseEvents::onMouseUp), "onMouseUp"},
+        {chaiscript::fun(&crook::events::MouseEvents::onMouseMove), "onMouseMove"}
     });
 
     //window functions
-    chaiscript::utility::add_class<crook::MouseEvents>(*m,
+    chaiscript::utility::add_class<crook::Window>(*m,
         "Window",{},
         {
         {chaiscript::fun(&crook::Window::mouseEvents), "mouseEvents"},
@@ -41,32 +43,32 @@ chaiscript::ModulePtr uxLibrary(){
      });
 
      //keyboard Event registration
-     chaiscript::utility::add_class<crook::KeyEvents>(*m,
-        "KeyEvents",{chaiscript::constructor<crook::KeyEvents()>()},
+     chaiscript::utility::add_class<crook::events::KeyEvents>(*m,
+        "KeyEvents",{chaiscript::constructor<crook::events::KeyEvents()>()},
         {
-        {chaiscript::fun(&crook::KeyEvents::onKeyDown), "onKeyDown"},
-        {chaiscript::fun(&crook::KeyEvents::onKeyUp), "onKeyUp"},
-        {chaiscript::fun(&crook::KeyEvents::onKeyType), "onKeyType"}
+        {chaiscript::fun(&crook::events::KeyEvents::onKeyDown), "onKeyDown"},
+        {chaiscript::fun(&crook::events::KeyEvents::onKeyUp), "onKeyUp"},
+        {chaiscript::fun(&crook::events::KeyEvents::onKeyType), "onKeyType"}
      });
 
      //window events
-     chaiscript::utility::add_class<crook::WindowEvents>(*m,
-        "WindowEvents",{chaiscript::constructor<crook::WindowEvents()>()},
+     chaiscript::utility::add_class<crook::events::WindowEvents>(*m,
+        "WindowEvents",{chaiscript::constructor<crook::events::WindowEvents()>()},
         {
-        {chaiscript::fun(&crook::WindowEvents::onClose), "onClose"},
-        {chaiscript::fun(&crook::WindowEvents::onRepositionEnd), "onRepositionEnd"},
-        {chaiscript::fun(&crook::WindowEvents::onRepositionStart), "onRepostionStart"},
-        {chaiscript::fun(&crook::WindowEvents::onResize), "onResize"},
-        {chaiscript::fun(&crook::WindowEvents::onFoucs), "onFocus"}
+        {chaiscript::fun(&crook::events::WindowEvents::onClose), "onClose"},
+        {chaiscript::fun(&crook::events::WindowEvents::onRepositionEnd), "onRepositionEnd"},
+        {chaiscript::fun(&crook::events::WindowEvents::onRepositionStart), "onRepostionStart"},
+        {chaiscript::fun(&crook::events::WindowEvents::onResize), "onResize"},
+        {chaiscript::fun(&crook::events::WindowEvents::onFoucs), "onFocus"}
      });
-      chaiscript::utility::add_class<crook::WindowEventObject>(*m,
+      chaiscript::utility::add_class<crook::events::objects::WindowEventObject>(*m,
         "WindowEventObject",
         {},
         {
-        {chaiscript::fun(&crook::WindowEventObject::height), "height"},
-        {chaiscript::fun(&crook::WindowEventObject::width), "width"},
-        {chaiscript::fun(&crook::WindowEventObject::windowX), "windowX"},
-        {chaiscript::fun(&crook::WindowEventObject::windowY), "windowY"}
+        {chaiscript::fun(&crook::events::objects::WindowEventObject::height), "height"},
+        {chaiscript::fun(&crook::events::objects::WindowEventObject::width), "width"},
+        {chaiscript::fun(&crook::events::objects::WindowEventObject::windowX), "windowX"},
+        {chaiscript::fun(&crook::events::objects::WindowEventObject::windowY), "windowY"}
         });
     return m;
 }

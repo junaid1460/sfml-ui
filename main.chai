@@ -4,7 +4,6 @@ def window(){
 
 
 var mywindow = window();
-var mywisdsndow = window();
 mywindow.mouseEvents(fun(){
 	var event = MouseEvents()
   	event.onMouseMove = fun(e){

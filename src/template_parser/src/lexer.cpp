@@ -1,6 +1,6 @@
-#line 2 "src/lexer.cpp"
+#line 2 "/home/junaid/code/sfui/src/template_parser/src/lexer.cpp"
 
-#line 4 "src/lexer.cpp"
+#line 4 "/home/junaid/code/sfui/src/template_parser/src/lexer.cpp"
 
 #define  YY_INT_ALIGNED short int
 
@@ -183,7 +183,7 @@ extern FILE *yyin, *yyout;
 	do \
 		{ \
 		/* Undo effects of setting up yytext. */ \
-        yy_size_t yyless_macro_arg = (n); \
+        int yyless_macro_arg = (n); \
         YY_LESS_LINENO(yyless_macro_arg);\
 		*yy_cp = (yy_hold_char); \
 		YY_RESTORE_YY_MORE_OFFSET \
@@ -211,7 +211,7 @@ struct yy_buffer_state
 	/* Number of characters read into yy_ch_buf, not including EOB
 	 * characters.
 	 */
-	yy_size_t yy_n_chars;
+	int yy_n_chars;
 
 	/* Whether we "own" the buffer - i.e., we know we created it,
 	 * and can realloc() it to grow it, and should free() it to
@@ -281,7 +281,7 @@ static YY_BUFFER_STATE * yy_buffer_stack = 0; /**< Stack as an array. */
 
 /* yy_hold_char holds the character lost when yytext is formed. */
 static char yy_hold_char;
-static yy_size_t yy_n_chars;		/* number of characters read into yy_ch_buf */
+static int yy_n_chars;		/* number of characters read into yy_ch_buf */
 yy_size_t yyleng;
 
 /* Points to current character in buffer. */
@@ -529,8 +529,8 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "src/lexer.l"
-#line 3 "src/lexer.l"
+#line 1 "src/template_parser/src/lexer.l"
+#line 3 "src/template_parser/src/lexer.l"
     #include<stdio.h>
     #include<string>
     #include<vector>
@@ -555,7 +555,7 @@ char *yytext;
     
 
 
-#line 559 "src/lexer.cpp"
+#line 559 "/home/junaid/code/sfui/src/template_parser/src/lexer.cpp"
 
 #define INITIAL 0
 #define REALLYEND 1
@@ -784,9 +784,9 @@ YY_DECL
 		}
 
 	{
-#line 42 "src/lexer.l"
+#line 42 "src/template_parser/src/lexer.l"
 
-#line 790 "src/lexer.cpp"
+#line 790 "/home/junaid/code/sfui/src/template_parser/src/lexer.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -845,7 +845,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 43 "src/lexer.l"
+#line 43 "src/template_parser/src/lexer.l"
 {
                                     printf("%s\nThis is line : %d %s\n",KGRN,yylineno,KNRM);
                                     yylval = std::string(yytext); 
@@ -860,18 +860,18 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 54 "src/lexer.l"
+#line 54 "src/template_parser/src/lexer.l"
 {   spc++;}
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 55 "src/lexer.l"
+#line 55 "src/template_parser/src/lexer.l"
 {   spc=0;yylineno++;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 57 "src/lexer.l"
+#line 57 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("body:lb :'%s' returned\n",yytext);
@@ -881,12 +881,12 @@ YY_RULE_SETUP
                                 }
 	YY_BREAK
 case YY_STATE_EOF(BODY):
-#line 64 "src/lexer.l"
+#line 64 "src/template_parser/src/lexer.l"
 {   printf("body:eot:'%s' returned\n",yytext);BEGIN(REALLYEND); return _EOF;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 65 "src/lexer.l"
+#line 65 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("body:sp:'%s'  returned\n",yytext);
@@ -896,17 +896,17 @@ YY_RULE_SETUP
 case 6:
 /* rule 6 can match eol */
 YY_RULE_SETUP
-#line 70 "src/lexer.l"
+#line 70 "src/template_parser/src/lexer.l"
 {   BEGIN(INITIAL);spc=0;   }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 71 "src/lexer.l"
+#line 71 "src/template_parser/src/lexer.l"
 {   return ERROR;   }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 72 "src/lexer.l"
+#line 72 "src/template_parser/src/lexer.l"
 {
                                     BEGIN(BNAME);
                                     yylval = std::string(yytext); 
@@ -914,7 +914,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 76 "src/lexer.l"
+#line 76 "src/template_parser/src/lexer.l"
 {   
                                     BEGIN(BNAME);
                                     yylval = std::string(yytext); 
@@ -925,7 +925,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 83 "src/lexer.l"
+#line 83 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("attr:rb:'%s'  returned\n",yytext);
@@ -936,7 +936,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 90 "src/lexer.l"
+#line 90 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("attr:att:'%s'  returned\n",yytext);
@@ -946,133 +946,133 @@ YY_RULE_SETUP
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 96 "src/lexer.l"
+#line 96 "src/template_parser/src/lexer.l"
 {return ERROR;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 97 "src/lexer.l"
+#line 97 "src/template_parser/src/lexer.l"
 {   yylval = std::string(yytext);printf("bname:att:'%s'  returned\n",yytext);return ATT;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 98 "src/lexer.l"
+#line 98 "src/template_parser/src/lexer.l"
 {   yylval = std::string(yytext);printf("bname:rb:'%s'  returned\n",yytext);bc--;BEGIN(ATTEQ);return RB;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 99 "src/lexer.l"
+#line 99 "src/template_parser/src/lexer.l"
 {   yylval = std::string(yytext);printf("bname:rsb:'%s'  returned\n",yytext);bc--;BEGIN(ATTEQ);return RSB;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 100 "src/lexer.l"
+#line 100 "src/template_parser/src/lexer.l"
 {return ERROR;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 101 "src/lexer.l"
+#line 101 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("atteq:eq:'%s'  returned\n",yytext);BEGIN(EQVAL);return EQ;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 104 "src/lexer.l"
+#line 104 "src/template_parser/src/lexer.l"
 {   BEGIN(ATTR);return COMMA;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 105 "src/lexer.l"
+#line 105 "src/template_parser/src/lexer.l"
 {   printf("atteq:rb:'%s'  returned\n",yytext);bc--;BEGIN(TEXT);return RB;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 106 "src/lexer.l"
+#line 106 "src/template_parser/src/lexer.l"
 {   return ERROR;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 107 "src/lexer.l"
+#line 107 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("eqval:sq :'%s' returned\n",yytext);BEGIN(SQVAL);return SQ;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 110 "src/lexer.l"
+#line 110 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("eqval:dq :'%s' returned\n",yytext);BEGIN(DQVAL);return DQ;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 113 "src/lexer.l"
+#line 113 "src/template_parser/src/lexer.l"
 {   return ERROR;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 114 "src/lexer.l"
+#line 114 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("dqval:any :'%s' returned\n",yytext);return ANY;}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 117 "src/lexer.l"
+#line 117 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("dqval:dq:'%s'  returned\n",yytext);BEGIN(GOTOATTR);return DQ;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 121 "src/lexer.l"
+#line 121 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("dqval:any :'%s' returned\n",yytext);return ANY;}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 126 "src/lexer.l"
+#line 126 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("sqval:any :'%s' returned\n",yytext);return ANY;}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 129 "src/lexer.l"
+#line 129 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("sqval:sq :'%s' returned\n",yytext);BEGIN(GOTOATTR);return SQ;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 132 "src/lexer.l"
+#line 132 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("sqval:any :'%s' returned\n",yytext);return ANY;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 136 "src/lexer.l"
+#line 136 "src/template_parser/src/lexer.l"
 {   BEGIN(ATTR);return COMMA;}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 137 "src/lexer.l"
+#line 137 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); bc--;
                                     printf("gotoattr:rb :'%s' returned\n",yytext);BEGIN(TEXT);return RB;}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 140 "src/lexer.l"
+#line 140 "src/template_parser/src/lexer.l"
 {   return ERROR;}
 	YY_BREAK
 case 33:
 /* rule 33 can match eol */
 YY_RULE_SETUP
-#line 142 "src/lexer.l"
+#line 142 "src/template_parser/src/lexer.l"
 {
                                     spc = 0;
                                     yylval = std::string(yytext); std::cout<<"\n\nbraces :"<<bc<<"\n";
@@ -1080,35 +1080,35 @@ YY_RULE_SETUP
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 146 "src/lexer.l"
+#line 146 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("text:any:'%s' returned\n",yytext);return ANY;}
 	YY_BREAK
 case YY_STATE_EOF(TEXT):
-#line 149 "src/lexer.l"
+#line 149 "src/template_parser/src/lexer.l"
 {
                                     yylval = std::string(yytext); 
                                     printf("text:eot:'%s' returned\n",yytext);BEGIN(ETC); return EOT;}
 	YY_BREAK
 case YY_STATE_EOF(ETC):
-#line 154 "src/lexer.l"
+#line 154 "src/template_parser/src/lexer.l"
 {   std::cout<<"returned EOF: \n"; BEGIN(REALLYEND); return _EOF; }
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 156 "src/lexer.l"
+#line 156 "src/template_parser/src/lexer.l"
 {   std::cout<<"returned EOF: \n"; BEGIN(REALLYEND); return _EOF; }
 	YY_BREAK
 case YY_STATE_EOF(REALLYEND):
-#line 157 "src/lexer.l"
+#line 157 "src/template_parser/src/lexer.l"
 {   std::cout<<"returned eof: \n"; return 0; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 158 "src/lexer.l"
+#line 158 "src/template_parser/src/lexer.l"
 ECHO;
 	YY_BREAK
-#line 1112 "src/lexer.cpp"
+#line 1112 "/home/junaid/code/sfui/src/template_parser/src/lexer.cpp"
 case YY_STATE_EOF(BNAME):
 case YY_STATE_EOF(ATTR):
 case YY_STATE_EOF(GOTOATTR):
@@ -1301,7 +1301,7 @@ static int yy_get_next_buffer (void)
 
 	else
 		{
-			int num_to_read =
+			yy_size_t num_to_read =
 			YY_CURRENT_BUFFER_LVALUE->yy_buf_size - number_to_move - 1;
 
 		while ( num_to_read <= 0 )
@@ -1370,9 +1370,9 @@ static int yy_get_next_buffer (void)
 	else
 		ret_val = EOB_ACT_CONTINUE_SCAN;
 
-	if ((yy_size_t) ((yy_n_chars) + number_to_move) > YY_CURRENT_BUFFER_LVALUE->yy_buf_size) {
+	if ((int) ((yy_n_chars) + number_to_move) > YY_CURRENT_BUFFER_LVALUE->yy_buf_size) {
 		/* Extend the array by 50%, plus the number we really need. */
-		yy_size_t new_size = (yy_n_chars) + number_to_move + ((yy_n_chars) >> 1);
+		int new_size = (yy_n_chars) + number_to_move + ((yy_n_chars) >> 1);
 		YY_CURRENT_BUFFER_LVALUE->yy_ch_buf = (char *) yyrealloc((void *) YY_CURRENT_BUFFER_LVALUE->yy_ch_buf,new_size  );
 		if ( ! YY_CURRENT_BUFFER_LVALUE->yy_ch_buf )
 			YY_FATAL_ERROR( "out of dynamic memory in yy_get_next_buffer()" );
@@ -1789,7 +1789,7 @@ static void yyensure_buffer_stack (void)
 		 * scanner will even need a stack. We use 2 instead of 1 to avoid an
 		 * immediate realloc on the next call.
          */
-      num_to_alloc = 1; /* After all that talk, this was set to 1 anyways... */
+		num_to_alloc = 1; /* After all that talk, this was set to 1 anyways... */
 		(yy_buffer_stack) = (struct yy_buffer_state**)yyalloc
 								(num_to_alloc * sizeof(struct yy_buffer_state*)
 								);
@@ -1925,7 +1925,7 @@ static void yy_fatal_error (yyconst char* msg )
 	do \
 		{ \
 		/* Undo effects of setting up yytext. */ \
-        yy_size_t yyless_macro_arg = (n); \
+        int yyless_macro_arg = (n); \
         YY_LESS_LINENO(yyless_macro_arg);\
 		yytext[yyleng] = (yy_hold_char); \
 		(yy_c_buf_p) = yytext + yyless_macro_arg; \
@@ -2115,6 +2115,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 158 "src/lexer.l"
+#line 158 "src/template_parser/src/lexer.l"
 
 

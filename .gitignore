@@ -25,3 +25,4 @@ app
 *.filters
 *.sln
 build/
+debug
