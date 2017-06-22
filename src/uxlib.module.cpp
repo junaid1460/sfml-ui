@@ -12,6 +12,7 @@ chaiscript::ModulePtr uxLibrary(){
     chaiscript::ModulePtr m(new chaiscript::Module());
     m->add(chaiscript::fun(&createWindow),"createWindow");
 
+    m->add(chaiscript::fun(&addEventListener),"addEventListener");
 
     //MouseEvent registration
     chaiscript::utility::add_class<crook::events::objects::MouseEventObject>(*m,
@@ -21,46 +22,32 @@ chaiscript::ModulePtr uxLibrary(){
         {chaiscript::fun(&crook::events::objects::MouseEventObject::x), "x"},
        {chaiscript::fun(&crook::events::objects::MouseEventObject::y), "y"}
         });
-
-
-    chaiscript::utility::add_class<crook::events::MouseEvents>(*m,
-        "MouseEvents",
-        {chaiscript::constructor<crook::events::MouseEvents()>()},
+    chaiscript::utility::add_class<crook::ui::Component>(*m,
+    "Component",
+        {},
         {
-        {chaiscript::fun(&crook::events::MouseEvents::onClick), "onClick"},
-        {chaiscript::fun(&crook::events::MouseEvents::onMouseDown), "onMouseDown"},
-        {chaiscript::fun(&crook::events::MouseEvents::onMouseUp), "onMouseUp"},
-        {chaiscript::fun(&crook::events::MouseEvents::onMouseMove), "onMouseMove"}
-    });
+            {chaiscript::fun(&crook::ui::Component::addEventListener),"addEventListener"}
+        }
+    );
+
+    chaiscript::utility::add_class<crook::events::objects::EventObject>(*m,
+        "EventObject",{},
+        {
+            
+     });
 
     //window functions
     chaiscript::utility::add_class<crook::Window>(*m,
         "Window",{},
         {
-        {chaiscript::fun(&crook::Window::mouseEvents), "mouseEvents"},
-        {chaiscript::fun(&crook::Window::keyEvents), "keyEvents"},
-        {chaiscript::fun(&crook::Window::windowEvents), "windowEvents"}
+            
      });
 
      //keyboard Event registration
-     chaiscript::utility::add_class<crook::events::KeyEvents>(*m,
-        "KeyEvents",{chaiscript::constructor<crook::events::KeyEvents()>()},
-        {
-        {chaiscript::fun(&crook::events::KeyEvents::onKeyDown), "onKeyDown"},
-        {chaiscript::fun(&crook::events::KeyEvents::onKeyUp), "onKeyUp"},
-        {chaiscript::fun(&crook::events::KeyEvents::onKeyType), "onKeyType"}
-     });
+    
 
      //window events
-     chaiscript::utility::add_class<crook::events::WindowEvents>(*m,
-        "WindowEvents",{chaiscript::constructor<crook::events::WindowEvents()>()},
-        {
-        {chaiscript::fun(&crook::events::WindowEvents::onClose), "onClose"},
-        {chaiscript::fun(&crook::events::WindowEvents::onRepositionEnd), "onRepositionEnd"},
-        {chaiscript::fun(&crook::events::WindowEvents::onRepositionStart), "onRepostionStart"},
-        {chaiscript::fun(&crook::events::WindowEvents::onResize), "onResize"},
-        {chaiscript::fun(&crook::events::WindowEvents::onFoucs), "onFocus"}
-     });
+  
       chaiscript::utility::add_class<crook::events::objects::WindowEventObject>(*m,
         "WindowEventObject",
         {},

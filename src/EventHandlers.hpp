@@ -33,40 +33,43 @@ class MouseEventHandler{
             return this;
         }
         void listen(){
-            std::thread([](crook::Window *cwin,
+
+            std::thread([](crook::ui::Component *cwin,
             crook::events::handlers::MouseEventHandler *me,
             sf::RenderWindow *window
             ){
                 sf::Event event;
-                while(window->isOpen()){
-                    while(window->pollEvent(event)){
-                        if (event.type == sf::Event::Closed){
-                            cwin->_windowEvents.onClose(crook::events::objects::WindowEventObject{20});
+                while(window->waitEvent(event)){
+                    if (event.type == sf::Event::Closed){
+                            cwin->_windowEvents.onEvent(crook::events::objects::WindowEventObject{20,23},
+                            crook::events::WindowEvents::EventList.close
+                            );
                             window->close();
                         }
-                        if(event.type == sf::Event::MouseMoved){
-                            cwin->_mouseEvents.onMouseMove(crook::events::objects::MouseEventObject{
-                                window->getPosition().x,
-                                window->getPosition().y,
-                                event.mouseMove.x,
-                                event.mouseMove.y
-                                });
-                        }
-                        //onfocus
-                        if(event.type == sf::Event::GainedFocus){
-                            cwin->_windowEvents.onFoucs(crook::events::objects::WindowEventObject{
-                                window->getSize().x,
-                                window->getSize().y,
-                                window->getPosition().x,
-                                window->getPosition().y,
-                            });
-                        }
-                    }
+                    else
+                    (std::thread(me->fireEvent,event,window,cwin)).detach();
+                    
                 }
                 std::cout << "detached";
                 delete me;
 
             },this->cwin,this,this->window).detach();
+        }
+
+        static void  fireEvent(sf::Event event,sf::RenderWindow *window,crook::ui::Component *cwin){
+            
+                        if(event.type == sf::Event::MouseMoved){
+                            cwin->_mouseEvents.onEvent(crook::events::objects::MouseEventObject{
+                                window->getPosition().x,
+                                window->getPosition().y,
+                                event.mouseMove.x,
+                                event.mouseMove.y
+                                },
+                                crook::events::MouseEvents::EventList.move
+                                );
+                        }
+                        //onfocus
+                       
         }
 };
 

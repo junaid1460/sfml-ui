@@ -4,18 +4,33 @@ def window(){
 
 
 var mywindow = window();
-mywindow.mouseEvents(fun(){
-	var event = MouseEvents()
-  	event.onMouseMove = fun(e){
-  		print("x : "+ to_string(e.x));
-	}
-	return event;
-}());
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
+window();
 
-mywindow.windowEvents(fun(){
-	var event = WindowEvents()
-  	event.onFocus = fun(e){
-  		print("focus : "+ to_string(e.windowX));
-	}
-	return event;
-}());
+
+addEventListener(mywindow,"mousemove",fun(e){
+	print("y")
+})

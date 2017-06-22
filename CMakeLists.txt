@@ -39,7 +39,7 @@ target_link_libraries(parser-test parser)
 #\parser
 
 #-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
-add_definitions("-std=c++14")
+add_definitions("-std=c++1z")
 
 if(UNIX)
 	add_executable(app ./main.cpp)

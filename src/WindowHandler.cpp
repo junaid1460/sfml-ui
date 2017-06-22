@@ -1,5 +1,6 @@
 #include "WindowHandler.hpp"
 #include "EventHandlers.hpp"
+#include "EventObjects.hpp"
 #include <iostream>
 
 sf::RenderWindow * crook::Window::getHandle(){
@@ -14,10 +15,11 @@ crook::Window::Window(std::string title,int width,int height){
     this->_init();
 }
 void crook::Window::_init(){
-                window->setVerticalSyncEnabled(true);
+                window->setFramerateLimit(1);
                 (new crook::events::handlers::MouseEventHandler())
                 ->setContext(this)
                 ->listen();
+                
             }
 
 bool crook::Window::render(){
@@ -37,13 +39,4 @@ bool crook::Window::render(){
 }
 crook::Window::~Window(){
     delete window;
-}
-void crook::Window::mouseEvents(crook::events::MouseEvents t){
-    this->_mouseEvents = t;
-}
-void crook::Window::keyEvents(crook::events::KeyEvents t){
-    this->_keyEvents = t;
-}
-void crook::Window::windowEvents(crook::events::WindowEvents t){
-    this->_windowEvents = t;
 }

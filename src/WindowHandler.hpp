@@ -2,17 +2,16 @@
 #define WINDOWHANDLER_HPP
 
 
+#include "Component.cpp"
+
 #include "sfml.hpp"
 
 #include<string>
 #include<thread>
 #include<future>
-
-#include "Events.hpp"
-#include "EventObjects.hpp"
 namespace crook{
 
-    class Window {
+    class Window :public crook::ui::Component {
 
         private:
             sf::RenderWindow *window;
@@ -22,17 +21,12 @@ namespace crook{
             bool _drawOnFocus = true;
             void _init();
         public:
-            crook::events::MouseEvents _mouseEvents;
-            crook::events::KeyEvents _keyEvents;
-            crook::events::WindowEvents _windowEvents;
+            
             sf::RenderWindow * getHandle();
             Window(std::string title);
             Window(std::string title,int width,int height);
             bool render();
             ~Window();
-            void mouseEvents(crook::events::MouseEvents t);
-            void keyEvents(crook::events::KeyEvents t);
-            void windowEvents(crook::events::WindowEvents t);
     };
 }
 
