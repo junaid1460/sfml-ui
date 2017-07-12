@@ -7,17 +7,7 @@
 
 namespace crook{namespace events{namespace handlers{
 
-class WindowEventHandler{
-    private:
-};
 
-class KeyboardEventHandler{
-    private:
-
-    public:
-       
-        
-};
 
 
 
@@ -59,6 +49,16 @@ class MouseEventHandler{
         static void  fireEvent(sf::Event event,sf::RenderWindow *window,crook::ui::Component *cwin){
             
                         if(event.type == sf::Event::MouseMoved){
+                            cwin->_mouseEvents.onEvent(crook::events::objects::MouseEventObject{
+                                window->getPosition().x,
+                                window->getPosition().y,
+                                event.mouseMove.x,
+                                event.mouseMove.y
+                                },
+                                crook::events::MouseEvents::EventList.move
+                                );
+                        }
+                        else if(event.type == sf::Event::EventType::){
                             cwin->_mouseEvents.onEvent(crook::events::objects::MouseEventObject{
                                 window->getPosition().x,
                                 window->getPosition().y,

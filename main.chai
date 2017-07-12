@@ -4,33 +4,22 @@ def window(){
 
 
 var mywindow = window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
-window();
+
 
 
 addEventListener(mywindow,"mousemove",fun(e){
-	print("y")
+	print("hel")
 })
+
+addEventListener(mywindow,"click",fun(e){
+ for(i:[1..1000]){
+	 print(i)
+ }
+})
+addEventListener(mywindow,"mousemove",fun(e){
+	print("hell")
+})
+addEventListener(mywindow,"mousemove",fun(e){
+	print("hell")
+})
+
